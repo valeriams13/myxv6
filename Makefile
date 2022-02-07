@@ -180,7 +180,7 @@ ifneq ($(V),@)
 GRADEFLAGS += -v
 endif
 
-print-gdbort:
+print-gdbport:
 	@echo $(GDBPORT)
 	
 	
