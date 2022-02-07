@@ -180,6 +180,10 @@ ifneq ($(V),@)
 GRADEFLAGS += -v
 endif
 
+print-gdbort:
+	@echo $(GDBPORT)
+	
+	
 grade:
 	@echo $(MAKE) clean
 	@$(MAKE) clean || \
