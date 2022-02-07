@@ -1,3 +1,9 @@
+# To compile and run with a lab solution, set the lab name in lab.mk
+# (e.g., LAB=syscalls).  Run make grade to test solution with the lab's
+# grade script (e.g., grade-lab-syscalls).
+
+-include conf/lab.mk
+
 K=kernel
 U=user
 
@@ -170,3 +176,12 @@ qemu-gdb: $K/kernel .gdbinit fs.img
 	@echo "*** Now run 'gdb' in another window." 1>&2
 	$(QEMU) $(QEMUOPTS) -S $(QEMUGDB)
 
+ifneq ($(V),@)
+GRADEFLAGS += -v
+endif
+
+grade:
+        @echo $(MAKE) clean
+        @$(MAKE) clean || \
+          (echo "'make clean' failed.  HINT: Do you have another running instance of xv6?" && exit 1)
+        ./grade-lab-$(LAB) $(GRADEFLAGS)
