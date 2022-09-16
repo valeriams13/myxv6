@@ -672,8 +672,6 @@ procinfo(uint64 addr)
     procinfo.pid = p->pid;
     procinfo.state = p->state;
     procinfo.size = p->sz;
-    procinfo.cputime = p->cputime;
-    procinfo.arrtime = p->arrtime;
     if (p->parent)
       procinfo.ppid = (p->parent)->pid;
     else
