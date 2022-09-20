@@ -21,10 +21,10 @@ main(int argc, char **argv)
   if (nprocs < 0)
     exit(-1);
 
-  printf("pid state    size   ppid   name\n");
+  printf("pid\tstate\t\tsize\tppid\tname\n");
   for (i=0; i<nprocs; i++) {
     state = states[uproc[i].state];
-    printf("%d   %s %l  %d      %s\n", uproc[i].pid, state,
+    printf("%d\t%s\t%l\t%d\t%s\n", uproc[i].pid, state,
                    uproc[i].size, uproc[i].ppid, uproc[i].name);
   }
 
