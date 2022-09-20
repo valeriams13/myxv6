@@ -95,3 +95,10 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+int
+sys_getprocs(uint64 address){
+  if(argaddr(0, &address) < 0)
+    return -1;
+  return procinfo(address);
+}
