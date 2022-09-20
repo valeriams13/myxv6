@@ -12,6 +12,6 @@ main(int argc, char **argv)
     exit(1);
   }
   for(i=1; i<argc; i++)
-    sleep(atoi((argv[i])*(10)));
+    sleep(atoi((argv[i])));
   exit(0);
 }
