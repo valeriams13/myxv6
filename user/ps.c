@@ -27,6 +27,7 @@ main(int argc, char **argv)
     printf("%d\t%s\t%l\t%d\t%s\n", uproc[i].pid, state,
                    uproc[i].size, uproc[i].ppid, uproc[i].name);
   }
+  printf(clockintr());
 
   exit(0);
 }
