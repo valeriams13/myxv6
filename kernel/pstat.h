@@ -5,4 +5,9 @@ struct pstat {
   int ppid;        // Parent process ID
   char name[16];   // Parent command name
   uint cputime;
+  uint arrtime;
+};
+
+struct rusage{
+  uint cputime;
 };
